@@ -68,9 +68,19 @@ const LotterySpinner = () => {
     };
   }, []);
 
-return (
+  return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Space Background */}
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/src/assets/image/BG_Image.jpg"
+          alt="background"
+          className="w-full h-full object-cover scale-400"
+          style={{ transformOrigin: "center" }}
+        />
+      </div>
+
+      {/* Space Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-950/60 via-indigo-950/70 to-purple-950/60"></div>
 
       {/* Stars */}
@@ -115,26 +125,35 @@ return (
         <div className="relative">
           {/* Title Section */}
           <div className="text-center mb-8">
-            <img src="/src/assets/image/Congratulation_image.png" alt="" className="mx-auto" />
+            <img
+              src="/src/assets/image/Congratulation_image.png"
+              alt=""
+              className="mx-auto"
+            />
 
-            {showResult && (
-              <div className="mt-5 animate-prize-flash-smooth">
+            {/* Prize Container with fixed height — prevents layout jumping */}
+            <div
+              className="flex items-center justify-center mt-5"
+              style={{ height: "70px" }}
+            >
+              {showResult && (
                 <p
-                  className="text-4xl md:text-5xl font-black tracking-widest"
+                  className="text-4xl md:text-5xl font-black tracking-widest animate-prize-flash-smooth"
                   style={{
                     fontFamily: "Arial Black, sans-serif",
                     letterSpacing: "0.2em",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {prizeType}
                 </p>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
-          {/* Numbers Display Area with Background Image */}
+          {/* Numbers Display Area */}
           <div className="relative px-4">
-            {/* Hologram Background Image - Image 3 */}
+            {/* Hologram Background Image*/}
             <div
               className="absolute left-0 right-0 pointer-events-none"
               style={{ bottom: "-100px", height: "400px" }}
@@ -142,12 +161,16 @@ return (
               <img
                 src="/src/assets/image/hologram-image.png"
                 alt="hologram"
-                className="w-full h-full object-fill  opacity-80"
-                style={{ mixBlendMode: "screen" }}
+                className="w-full h-full object-fill opacity-50"
+                style={{
+                  mixBlendMode: "screen",
+                  transform: "perspective(700px) rotateX(18deg)",
+                  transformOrigin: "center top",
+                }}
               />
             </div>
             {/* Numbers Container */}
-            <div className="relative flex justify-center items-end gap-2 md:gap-3 pb-3 z-10">
+            <div className="relative flex justify-center items-end gap-2 md:gap-3 z-10">
               {displayNumbers.map((num, index) => (
                 <div
                   key={index}
@@ -219,7 +242,7 @@ return (
       </div>
 
       {/* Bottom Tech Border - Image 2 */}
-      <div className="relative pt-18">
+      <div className="relative">
         <div className="w-full flex items-center justify-center">
           <img
             src="/src/assets/image/Bottom_Image.png"
