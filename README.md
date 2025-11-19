@@ -1,18 +1,124 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎰 Lottery Spin Interaction – React + Tailwind
 
-Currently, two official plugins are available:
+A fully animated, futuristic **lottery spin application** built with **React.js** and **Tailwind CSS**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project includes spinning number cylinders, hologram visuals, glowing borders, and dynamic prize detection animations.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 Features
 
-Note: This will impact Vite dev & build performances.
+### 🎡 Spin Animation
 
-## Expanding the ESLint configuration
+* Full lottery-style number rotation
+* Rapid spinning → gradual slowdown → final stop
+* Smooth transition into winning numbers
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🏆 Winning Result
+
+* After the spin completes, a **Winner Banner** appears
+* Randomized: **1ST PRIZE**, **2ND PRIZE**, **3RD PRIZE**
+
+### ✨ Animated Prize Text
+
+* “First Prize” flashes **white ↔ red** using custom CSS keyframes
+* Matches the exact Figma design glow
+
+### 🌌 Space & Hologram UI
+
+* Neon-themed futuristic UI
+* 3D hologram tilt effect using **perspective + rotateX**
+* Glowing frames & reflective gradients
+* 100% manually coded — **no UI kits**
+
+### 🔘 Custom Spin Button
+
+* Perfectly recreated from the Figma
+* Inner glow
+* Pulse animation
+* Disabled during spin
+
+---
+
+## 🛠️ Tech Stack
+
+* **React.js** – Component logic & state
+* **Tailwind CSS** – Styling
+* **CSS Keyframes** – Spin, glow, twinkle animations
+* **JavaScript** – Spin logic, number generation
+
+---
+
+## 📦 Project Structure
+
+```
+src/
+ ├── assets/
+ │    └── image/
+ │         ├── Bottom_Image.png
+ │         ├── hologram-image.png
+ │         ├── Congratulation_image.png
+ │         └── (other assets)
+ │
+ ├── components/
+ │    ├── LotterySpinner.jsx
+ │    └── ui/
+ │         └── SpinButton.jsx
+ │
+ ├── App.jsx
+ └── main.jsx
+```
+
+---
+
+## ▶️ Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start development server
+
+```bash
+npm run dev
+```
+
+### 3. Open in browser
+
+```
+http://localhost:5173/
+```
+
+---
+
+## 🧪 Testing Instructions
+
+To verify correct behavior:
+
+1. Click **Spin**
+2. Numbers begin spinning rapidly
+3. Speed reduces gradually
+4. Numbers settle on final winning combination
+5. “Prize” text appears with color-flash animation
+6. Spin button stays disabled during the spin
+7. After result shows, spin again
+
+---
+
+## 👨‍💻 Developer
+
+**Anandhu R S**
+Frontend Developer – React.js
+
+---
+
+## 📄 License
+
+This project is created for evaluation/testing purposes.
+Not intended for commercial distribution.
+
+---
+
